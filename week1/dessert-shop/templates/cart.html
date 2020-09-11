@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+<table class="table table-striped">
+    <tr><th>Melon Name</th><th>Quantity</th><th>Price</th><th>Total</th></tr>
+
+    {% for key, value in display_cart.items() %}
+    <tr><td>{{value["name"]}}</td><td>{{value["qty"]}}</td><td>${{ "%.2f" % value["price"]}}</td><td>${{ "%.2f" % (value["qty"] * value["price"])}}</td></tr>
+    {% endfor %}
+
+</table>
+<h3>Total: ${{ "%.2f" % total }} </h3>
+
+<a href="/checkout" class="btn btn-large btn-primary">結帳</a>
+
+<a href="/melons" class="btn btn-large btn-info">繼續購物</a>
+
+<a href="/clear_cart" class="btn btn-large btn-danger">取消訂單</a>
+
+{% endblock %}
+
+

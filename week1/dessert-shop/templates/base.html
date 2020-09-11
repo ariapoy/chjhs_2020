@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/static/css/style.css" />
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- <img src="/static/img/ubermelonsmall.png"><a class="navbar-brand" href="/">Ubermelon</a> -->
+                    <img src="/static/img/1_logo.jpg"><a class="navbar-brand" href="/">暖暖 der 甜點工作坊</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/cart"><img class="melon-cart" src="/static/img/fast-food.png"> My Dessert Cart</a></li>
+                        <!-- Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
+                        {% if session["logged_in"] %}
+                            <li><a href="/login">{{"Log Out"}}</a></li>
+
+                        {% else %}
+                            <li><a href="/login">{{"Log In"}}</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <ul class="flashes">
+                <li>{{message}}</li>
+            </ul>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            {% block body %}{% endblock %}
+        </div>
+    </body>
+</html>
