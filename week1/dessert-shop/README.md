@@ -33,8 +33,10 @@ Navigate to [http://localhost:5000](http://localhost:5000) and start exploring t
 First Look Pandas Project
 --------------------------
 
-1. Start the **jupyter notebook** server by running `jupyter notebook`
-2. Open the *data-analysis/data_analysis_example.ipynb* file
+1. Add environment into jupyter kernel list by `(cshs) $ python -m ipykernel install --user --name cshs --display-name "cshs"`
+    - See more detailes [here](https://medium.com/pyradise/jupyter-notebook-tricks-kernels-9350502ccb69)
+2. Start the **jupyter notebook** server by running `jupyter notebook`
+3. Open the *data-analysis/data_analysis_example.ipynb* file
 
 Reference
 ---------
